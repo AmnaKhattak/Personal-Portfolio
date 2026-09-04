@@ -6,12 +6,14 @@ hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('active');
 });
 
+// Close Mobile Menu on Link Click
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
         navLinks.classList.remove('active');
     });
 });
 
+// Smooth Scrolling for Navbar Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -25,6 +27,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Skill Progress Bar Animation on Scroll
 const skillBars = document.querySelectorAll('.skill-progress');
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -41,6 +44,7 @@ const observer = new IntersectionObserver((entries) => {
 
 skillBars.forEach(bar => observer.observe(bar));
 
+// Contact Form Submission Handler
 document.querySelector('.contact-form')?.addEventListener('submit', function(e) {
     e.preventDefault();
     alert('Thank you for your message! I will get back to you soon.');
